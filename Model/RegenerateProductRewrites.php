@@ -261,8 +261,8 @@ class RegenerateProductRewrites extends AbstractRegenerateRewrites
 
         $productsCollection->setStore($storeId)
             ->addStoreFilter($storeId)
+            ->addFieldToFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH)
             ->addAttributeToSelect('name')
-            ->addAttributeToSelect('visibility')
             ->addAttributeToSelect('url_key')
             ->addAttributeToSelect('url_path')
             // use limit to avoid a "eating" of a memory
